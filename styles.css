@@ -1,0 +1,19 @@
+* {
+    border: 1px solid;
+    margin: auto;
+}
+
+button {
+    margin: 20px;
+}
+body {
+    display: block;
+ 
+}
+form {
+    margin-left: 30px;
+    /* display: none; */
+}
+table {
+    width: 500px;
+}

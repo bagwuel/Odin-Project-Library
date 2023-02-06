@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Pages</th>
+        <th>Read</th>
+      </tr>
+    </table>
+    <form action="#">
+      <div class="form-control">
+        <label for="title">Title *</label>
+        <input type="text" name="title" id="title" required />
+      </div>
+      <div class="form-control">
+        <label for="author">Author *</label>
+        <input type="text" name="author" id="author" required />
+      </div>
+      <div class="form-control">
+        <label for="pages">Pages *</label>
+        <input type="number" name="pages" id="pages" required />
+      </div>
+      <div class="form-control">
+        <label for="yes">Read?</label>
+        <input type="checkbox" name="read" id="yes" />
+      </div>
+      <button type="submit">Add Book</button>
+    </form>
+    <button class="new-book">NEW BOOK</button>
+    <script src="main.js"></script>
+  </body>
+</html>
