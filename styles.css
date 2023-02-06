@@ -1,6 +1,12 @@
-* {
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    outline: 0;
     border: 1px solid;
-    margin: auto;
+}
+
+body {
+    background-color: #CEBDAD;
 }
 
 button {
@@ -10,10 +16,55 @@ body {
     display: block;
  
 }
+
 form {
-    margin-left: 30px;
-    /* display: none; */
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 200px;
+    position: relative;
+    padding-top: 20px;
 }
+
+.form-control:not(.form-control:last-of-type) {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr 3fr;
+    width: 50%;
+}
+
+.form-control label:not(.form-control:last-of-type) {
+    justify-self: end;
+}
+
+.form-control input {
+    display: inline-block;
+    margin-left: 10px;
+    height: 1.5rem;
+    align-self: flex-end;
+}
+form.nonvisible {
+    display: none;
+
+}
+
 table {
     width: 500px;
+    margin: auto;
+}
+
+button {
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.material-symbols-outlined {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
 }

@@ -3,6 +3,7 @@ let myLibrary;
 const table = document.querySelector('table');
 const newBook = document.querySelector('.new-book')
 const newBookForm = document.querySelector('form')
+const formClose = document.querySelector('.material-symbols-outlined')
 
 window.addEventListener('load', () => {
         myLibrary = JSON.parse(localStorage.getItem('myLib')) || [];
@@ -45,6 +46,7 @@ newBookForm.addEventListener('submit', (e) => {
         localStorage.setItem('myLib', JSON.stringify(myLibrary))
     }
     newBookForm.reset();
+    newBookForm.classList.add('nonvisible');
 })
 
 function bookEntry(book) {
@@ -104,5 +106,13 @@ function readBook(e) {
     })
     localStorage.setItem('myLib', JSON.stringify(myLibrary))
 }
+
+newBook.addEventListener('click', () => {
+    newBookForm.classList.remove('nonvisible');
+})
+
+formClose.addEventListener('click', () => {
+    newBookForm.classList.add('nonvisible');
+})
 
 

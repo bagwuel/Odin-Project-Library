@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <!-- <link rel="stylesheet" href="./index.css" /> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <table>
@@ -16,24 +17,27 @@
         <th>Read</th>
       </tr>
     </table>
-    <form action="#">
+    <form action="#" class="nonvisible">
+        <span class="material-symbols-outlined">
+            disabled_by_default
+            </span>
       <div class="form-control">
-        <label for="title">Title *</label>
+        <label for="title">Title <span>*</span></label>
         <input type="text" name="title" id="title" required />
       </div>
       <div class="form-control">
-        <label for="author">Author *</label>
+        <label for="author">Author <span>*</span></label>
         <input type="text" name="author" id="author" required />
       </div>
       <div class="form-control">
-        <label for="pages">Pages *</label>
+        <label for="pages">Pages <span>*</span></label>
         <input type="number" name="pages" id="pages" required />
       </div>
       <div class="form-control">
         <label for="yes">Read?</label>
         <input type="checkbox" name="read" id="yes" />
       </div>
-      <button type="submit">Add Book</button>
+      <button type="submit">ADD TO LIBRARY</button>
     </form>
     <button class="new-book">NEW BOOK</button>
     <script src="main.js"></script>
