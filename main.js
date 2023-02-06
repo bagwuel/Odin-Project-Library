@@ -1,10 +1,13 @@
 
-let myLibrary = [];
+let myLibrary;
 const table = document.querySelector('table');
 const newBook = document.querySelector('.new-book')
 const newBookForm = document.querySelector('form')
 
-window.addEventListener('load', makeTableEntries(myLibrary))
+window.addEventListener('load', () => {
+        myLibrary = JSON.parse(localStorage.getItem('myLib')) || [];
+        makeTableEntries(myLibrary)
+})
 
 function Books (title, author, pages, read) {
     this.title = title;
@@ -39,7 +42,9 @@ newBookForm.addEventListener('submit', (e) => {
         const myBook = new Books(title, author, pages, read);
         myBook.addBookToLibrary(myLibrary)
         bookEntry(myBook);
+        localStorage.setItem('myLib', JSON.stringify(myLibrary))
     }
+    newBookForm.reset();
 })
 
 function bookEntry(book) {
@@ -81,6 +86,7 @@ function removeBook(e) {
     myLibrary = myLibrary.filter(book => {
         return book.title !== e.target.className;
     })
+    localStorage.setItem('myLib', JSON.stringify(myLibrary))
 }
 
 function readBook(e) {
@@ -96,6 +102,7 @@ function readBook(e) {
         tdRead.textContent = 'yes'
       } 
     })
+    localStorage.setItem('myLib', JSON.stringify(myLibrary))
 }
 
 
