@@ -10,20 +10,21 @@ window.addEventListener('load', () => {
         makeTableEntries(myLibrary)
 })
 
-function Books (title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+class Books {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read
+    }
 
-    this.info = function() {
+    info() {
         return (`The ${this.title} by ${this.author}, ${this.pages}, ${this.read}`);
     }
-    
-    this.addBookToLibrary = function (myLibrary) {
+
+    addBookToLibrary(myLibrary) {
         myLibrary.push(this);
     }
-
 }
 
 function makeTableEntries (library) {
